@@ -33,5 +33,3 @@ else
 fi
 
 echo 'herp'
-
-exit 0
