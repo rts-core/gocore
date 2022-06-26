@@ -24,8 +24,6 @@ jobs:
     - name: Generate Documentation
       if: github.event_name == 'push'
       uses: ./.github/workflows/actions/godoc
-      with:
-        html_dir: .docs
     
     - name: Publish Documentation
       if: github.event_name == 'push'
