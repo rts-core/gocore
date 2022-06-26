@@ -23,7 +23,7 @@ jobs:
       
     - name: Generate Documentation
       if: github.event_name == 'push'
-      uses: ./actions/godoc
+      uses: ./.github/workflows/actions/godoc
       with:
         html_dir: .docs
     
