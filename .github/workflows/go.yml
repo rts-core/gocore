@@ -21,7 +21,17 @@ jobs:
     - name: Test
       run: go test -v ./...
       
-    - name: Generate/Deploy Documenation
+    - name: Generate Documentation
       if: github.event_name == 'push'
-      uses: ktr0731/godoc-action@v0.1.0
+      uses: ./actions/godoc
+      with:
+        html_dir: .docs
+    
+    - name: Publish Documentation
+        if: github.event_name == 'push'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .docs
+          force_orphan: true
     
