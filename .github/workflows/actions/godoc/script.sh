@@ -3,7 +3,7 @@
 set -eo pipefail
 
 # Make sure background processes are killed on script leave
-#trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
+trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
 
 html_dir=$1
 ignore_src=$2
