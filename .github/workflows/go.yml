@@ -21,9 +21,8 @@ jobs:
     - name: Test
       run: go test -v ./...
       
-    - name: Generate Documentation
-      if: github.event_name == 'push'
-      uses: ./.github/workflows/actions/godoc
+    - name: Generate GoDoc HTML files
+      uses: rts-core/godoc-action@v1.0.0
     
     - name: Publish Documentation
       if: github.event_name == 'push'
