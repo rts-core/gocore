@@ -27,9 +27,9 @@ done
 # get our html
 cd $html_dir
 if [ $ignore_src = 'true' ] ; then
-  wget -m -k -q --reject go --show-progress --progress=dot -erobots=off --no-host-directories --no-use-server-timestamps -X /debug http://localhost:8080
+  wget -m -k -q --reject go --show-progress --progress=dot -erobots=off --no-host-directories --no-use-server-timestamps -X /debug http://localhost:8080 || true
 else
-  wget -m -k -q --show-progress --progress=dot -erobots=off --no-host-directories --no-use-server-timestamps -X /debug http://localhost:8080
+  wget -m -k -q --show-progress --progress=dot -erobots=off --no-host-directories --no-use-server-timestamps -X /debug http://localhost:8080 || true
 fi
 
 exit 0
