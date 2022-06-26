@@ -30,7 +30,7 @@ NOTE: this is a private repository, this may require you to do private repo work
 
 ## Documentation
 
-Documentation is hosted as standard [Go Documentation](). 
+Documentation is hosted as standard [Go Documentation](https://rts-core.github.io/gocore/). 
 
 ## Working with Private Repositories in Go
 
