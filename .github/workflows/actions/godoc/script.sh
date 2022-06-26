@@ -5,7 +5,7 @@ set -eo pipefail
 # Make sure background processes are killed on script leave
 trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
 
-html_dir = $1
+html_dir=$1
 
 # find go mod and make sure we're using it's parent as our root.
 cd "$(dirname "$(find . -name 'go.mod' | head -n 1)")" || exit 1
