@@ -6,7 +6,7 @@ inputs:
     required: false
     default: '.docs'
   ignore_src:
-    description: 'Flag for whether .go files are included. Greatly increases size and build time, and doesn't work with most hosting. Recommended flagged true.'
+    description: 'Flag for whether .go files are included. Greatly increases size and build time, and does not work with most hosting. Recommended flagged true.'
     required: false
     default: 'true'
 runs:
