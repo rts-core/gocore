@@ -8,7 +8,7 @@ inputs:
   ignore_src:
     description: 'Flag for whether .go files are included. Greatly increases size and build time, and doesn't work with most hosting. Recommended flagged true.'
     required: false
-    default: true
+    default: 'true'
 runs:
   using: 'docker'
   image: 'Dockerfile'
