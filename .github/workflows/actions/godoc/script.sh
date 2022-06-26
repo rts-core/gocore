@@ -24,12 +24,18 @@ for (( ; ; )); do
   fi
 done
 
+echo $ignore_src = 'true'
+
 # get our html
 cd $html_dir
 if [$ignore_src = 'true'] ; then
-  wget -m -k -q --reject go --show-progress --progress=dot -erobots=off --no-host-directories --no-use-server-timestamps http://localhost:8080
+  #wget -m -k -q --reject go --show-progress --progress=dot -erobots=off --no-host-directories --no-use-server-timestamps http://localhost:8080
+  wget -m -k -q --reject go -erobots=off --no-host-directories --no-use-server-timestamps http://localhost:8080
 else
-    wget -m -k -q --show-progress --progress=dot -erobots=off --no-host-directories --no-use-server-timestamps http://localhost:8080
+    #wget -m -k -q --show-progress --progress=dot -erobots=off --no-host-directories --no-use-server-timestamps http://localhost:8080
+    wget -m -k -q -erobots=off --no-host-directories --no-use-server-timestamps http://localhost:8080
 fi
+
+echo 'herp'
 
 exit 0
