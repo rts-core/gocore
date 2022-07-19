@@ -63,6 +63,7 @@ func SliceReduce[T interface{}](f func(T, T) T, ts []T) T {
 	return SliceFoldl(f, ts[2:], init)
 }
 
+// SliceToMap transforms a slice into a map using a key derived from the passed in functor
 func SliceToMap[TKey comparable, TVal interface{}](f func(TVal) TKey, ts []TVal) map[TKey]TVal {
 	returnSet := make(map[TKey]TVal)
 
@@ -71,4 +72,16 @@ func SliceToMap[TKey comparable, TVal interface{}](f func(TVal) TKey, ts []TVal)
 	}
 
 	return returnSet
+}
+
+// SliceFirst attempts to get the first entry in a slice to match a functor returning a bool for
+// whether any matches were found.
+func SliceFirst[T interface{}](f func(T) bool, ts []T) (T, bool) {
+	var defaultValue T
+	for _, t := range ts {
+		if f(t) {
+			return t, true
+		}
+	}
+	return defaultValue, false
 }
