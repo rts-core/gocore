@@ -313,3 +313,45 @@ func Test_SliceToMap_CalledWithEmptyArray_ReturnsExpected(t *testing.T) {
 
 	a.Equal(expected, actual)
 }
+
+func Test_SliceFirst_CalledWithFullArray_ReturnsExpected(t *testing.T) {
+	a := assert.New(t)
+	initial := []int{1, 2, 3, 4, 5}
+	expected := 2
+	functor := func(x int) bool { return x%2 == 0 }
+
+	actual, found := functional.SliceFirst(functor, initial)
+
+	a.Equal(expected, actual)
+	a.Equal(true, found)
+}
+
+func Test_SliceFirst_CalledWithSingleArray_ReturnsExpected(t *testing.T) {
+	a := assert.New(t)
+	initial := []int{1}
+	functor := func(x int) bool { return x%2 == 0 }
+
+	_, found := functional.SliceFirst(functor, initial)
+
+	a.Equal(false, found)
+}
+
+func Test_SliceFirst_CalledWithEmptyArray_ReturnsExpected(t *testing.T) {
+	a := assert.New(t)
+	initial := make([]int, 0)
+	functor := func(x int) bool { return x%2 == 0 }
+
+	_, found := functional.SliceFirst(functor, initial)
+
+	a.Equal(false, found)
+}
+
+func Test_SliceFirst_CalledWithNilArray_ReturnsExpected(t *testing.T) {
+	a := assert.New(t)
+	var initial []int
+	functor := func(x int) bool { return x%2 == 0 }
+
+	_, found := functional.SliceFirst(functor, initial)
+
+	a.Equal(false, found)
+}
