@@ -269,3 +269,47 @@ func Test_SliceReduce_CalledWithNilArray_ReturnsExpected(t *testing.T) {
 
 	a.Equal(expected, actual)
 }
+
+func Test_SliceToMap_CalledWithFullArray_ReturnsExpected(t *testing.T) {
+	a := assert.New(t)
+	initial := []int{0, 1, 2, 3, 4, 5}
+	expected := map[int]int{0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5}
+	functor := func(x int) int { return x }
+
+	actual := functional.SliceToMap(functor, initial)
+
+	a.Equal(expected, actual)
+}
+
+func Test_SliceToMap_CalledWithSingleItem_ReturnsExpected(t *testing.T) {
+	a := assert.New(t)
+	initial := []int{5}
+	expected := map[int]int{5: 5}
+	functor := func(x int) int { return x }
+
+	actual := functional.SliceToMap(functor, initial)
+
+	a.Equal(expected, actual)
+}
+
+func Test_SliceToMap_CalledWithNilArray_ReturnsExpected(t *testing.T) {
+	a := assert.New(t)
+	var initial []int
+	expected := make(map[int]int)
+	functor := func(x int) int { return x }
+
+	actual := functional.SliceToMap(functor, initial)
+
+	a.Equal(expected, actual)
+}
+
+func Test_SliceToMap_CalledWithEmptyArray_ReturnsExpected(t *testing.T) {
+	a := assert.New(t)
+	initial := make([]int, 0)
+	expected := make(map[int]int)
+	functor := func(x int) int { return x }
+
+	actual := functional.SliceToMap(functor, initial)
+
+	a.Equal(expected, actual)
+}

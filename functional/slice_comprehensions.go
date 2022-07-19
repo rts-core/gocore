@@ -2,7 +2,7 @@ package functional
 
 // SliceMap applies a function to all elements of a slice returning a slice  of results
 func SliceMap[InputType interface{}, OutputType interface{}](f func(InputType) OutputType, is []InputType) []OutputType {
-	rs := make([]OutputType, len(is), len(is))
+	rs := make([]OutputType, len(is))
 	for i, v := range is {
 		rs[i] = f(v)
 	}
@@ -61,4 +61,14 @@ func SliceReduce[T interface{}](f func(T, T) T, ts []T) T {
 
 	init := f(ts[0], ts[1])
 	return SliceFoldl(f, ts[2:], init)
+}
+
+func SliceToMap[TKey comparable, TVal interface{}](f func(TVal) TKey, ts []TVal) map[TKey]TVal {
+	returnSet := make(map[TKey]TVal)
+
+	for _, t := range ts {
+		returnSet[f(t)] = t
+	}
+
+	return returnSet
 }
