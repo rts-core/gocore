@@ -30,3 +30,19 @@ func Sub[T Number](a, b T) T {
 func Xor[T constraints.Integer](a, b T) T {
 	return a ^ b
 }
+
+// Max returns the maximum of two values
+func Max[T constraints.Integer](a, b T) T {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+// Min returns the minimum of two values
+func Min[T constraints.Integer](a, b T) T {
+	if a < b {
+		return a
+	}
+	return b
+}
