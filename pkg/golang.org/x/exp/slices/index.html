@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>slices - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.18.4";</script>
+<script src="../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="../../../../../index.html">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="../../../../../index.html">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:8080/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package slices
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "golang.org/x/exp/slices"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				<p>
+Package slices defines various functions useful with slices of any type.
+Unless otherwise specified, these functions all apply to the elements
+of a slice at index 0 &lt;= i &lt; len(s).
+</p>
+<p>
+Note that the less function in IsSortedFunc, SortFunc, SortStableFunc requires a
+strict weak ordering (<a href="https://en.wikipedia.org/wiki/Weak_ordering#Strict_weak_orderings">https://en.wikipedia.org/wiki/Weak_ordering#Strict_weak_orderings</a>),
+or the sorting may fail to sort correctly. A common case is when sorting slices of
+floating-point numbers containing NaN values.
+</p>
+
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+				
+				<dd><a href="index.html#BinarySearch">func BinarySearch[E constraints.Ordered](x []E, target E) (int, bool)</a></dd>
+			
+				
+				<dd><a href="index.html#BinarySearchFunc">func BinarySearchFunc[E any](x []E, target E, cmp func(E, E) int) (int, bool)</a></dd>
+			
+				
+				<dd><a href="index.html#Clip">func Clip[S ~[]E, E any](s S) S</a></dd>
+			
+				
+				<dd><a href="index.html#Clone">func Clone[S ~[]E, E any](s S) S</a></dd>
+			
+				
+				<dd><a href="index.html#Compact">func Compact[S ~[]E, E comparable](s S) S</a></dd>
+			
+				
+				<dd><a href="index.html#CompactFunc">func CompactFunc[S ~[]E, E any](s S, eq func(E, E) bool) S</a></dd>
+			
+				
+				<dd><a href="index.html#Compare">func Compare[E constraints.Ordered](s1, s2 []E) int</a></dd>
+			
+				
+				<dd><a href="index.html#CompareFunc">func CompareFunc[E1, E2 any](s1 []E1, s2 []E2, cmp func(E1, E2) int) int</a></dd>
+			
+				
+				<dd><a href="index.html#Contains">func Contains[E comparable](s []E, v E) bool</a></dd>
+			
+				
+				<dd><a href="index.html#Delete">func Delete[S ~[]E, E any](s S, i, j int) S</a></dd>
+			
+				
+				<dd><a href="index.html#Equal">func Equal[E comparable](s1, s2 []E) bool</a></dd>
+			
+				
+				<dd><a href="index.html#EqualFunc">func EqualFunc[E1, E2 any](s1 []E1, s2 []E2, eq func(E1, E2) bool) bool</a></dd>
+			
+				
+				<dd><a href="index.html#Grow">func Grow[S ~[]E, E any](s S, n int) S</a></dd>
+			
+				
+				<dd><a href="index.html#Index">func Index[E comparable](s []E, v E) int</a></dd>
+			
+				
+				<dd><a href="index.html#IndexFunc">func IndexFunc[E any](s []E, f func(E) bool) int</a></dd>
+			
+				
+				<dd><a href="index.html#Insert">func Insert[S ~[]E, E any](s S, i int, v ...E) S</a></dd>
+			
+				
+				<dd><a href="index.html#IsSorted">func IsSorted[E constraints.Ordered](x []E) bool</a></dd>
+			
+				
+				<dd><a href="index.html#IsSortedFunc">func IsSortedFunc[E any](x []E, less func(a, b E) bool) bool</a></dd>
+			
+				
+				<dd><a href="index.html#Sort">func Sort[E constraints.Ordered](x []E)</a></dd>
+			
+				
+				<dd><a href="index.html#SortFunc">func SortFunc[E any](x []E, less func(a, b E) bool)</a></dd>
+			
+				
+				<dd><a href="index.html#SortStableFunc">func SortStableFunc[E any](x []E, less func(a, b E) bool)</a></dd>
+			
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:8080/src/golang.org/x/exp/slices/slices.go">slices.go</a>
+			
+				<a href="http://localhost:8080/src/golang.org/x/exp/slices/sort.go">sort.go</a>
+			
+				<a href="http://localhost:8080/src/golang.org/x/exp/slices/zsortfunc.go">zsortfunc.go</a>
+			
+				<a href="http://localhost:8080/src/golang.org/x/exp/slices/zsortordered.go">zsortordered.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+			
+			
+			<h2 id="BinarySearch">func <a href="http://localhost:8080/src/golang.org/x/exp/slices/sort.go?s=2037:2106#L54">BinarySearch</a>
+				<a class="permalink" href="index.html#BinarySearch">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func BinarySearch[E <a href="../constraints/index.html">constraints</a>.<a href="../constraints/index.html#Ordered">Ordered</a>](x []E, target E) (<a href="../../../../builtin/index.html#int">int</a>, <a href="../../../../builtin/index.html#bool">bool</a>)</pre>
+			<p>
+BinarySearch searches for target in a sorted slice and returns the position
+where target is found, or the position where target would appear in the
+sort order; it also returns a bool saying whether the target is really found
+in the slice. The slice must be sorted in increasing order.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="BinarySearchFunc">func <a href="http://localhost:8080/src/golang.org/x/exp/slices/sort.go?s=2817:2894#L71">BinarySearchFunc</a>
+				<a class="permalink" href="index.html#BinarySearchFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func BinarySearchFunc[E <a href="../../../../builtin/index.html#any">any</a>](x []E, target E, cmp func(E, E) <a href="../../../../builtin/index.html#int">int</a>) (<a href="../../../../builtin/index.html#int">int</a>, <a href="../../../../builtin/index.html#bool">bool</a>)</pre>
+			<p>
+BinarySearchFunc works like BinarySearch, but uses a custom comparison
+function. The slice must be sorted in increasing order, where &#34;increasing&#34; is
+defined by cmp. cmp(a, b) is expected to return an integer comparing the two
+parameters: 0 if a == b, a negative number if a &lt; b and a positive number if
+a &gt; b.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Clip">func <a href="http://localhost:8080/src/golang.org/x/exp/slices/slices.go?s=6005:6036#L206">Clip</a>
+				<a class="permalink" href="index.html#Clip">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Clip[S ~[]E, E <a href="../../../../builtin/index.html#any">any</a>](s S) S</pre>
+			<p>
+Clip removes unused capacity from the slice, returning s[:len(s):len(s)].
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Clone">func <a href="http://localhost:8080/src/golang.org/x/exp/slices/slices.go?s=4681:4713#L152">Clone</a>
+				<a class="permalink" href="index.html#Clone">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Clone[S ~[]E, E <a href="../../../../builtin/index.html#any">any</a>](s S) S</pre>
+			<p>
+Clone returns a copy of the slice.
+The elements are copied using assignment, so this is a shallow clone.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Compact">func <a href="http://localhost:8080/src/golang.org/x/exp/slices/slices.go?s=5022:5063#L163">Compact</a>
+				<a class="permalink" href="index.html#Compact">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Compact[S ~[]E, E <a href="../../../../builtin/index.html#comparable">comparable</a>](s S) S</pre>
+			<p>
+Compact replaces consecutive runs of equal elements with a single copy.
+This is like the uniq command found on Unix.
+Compact modifies the contents of the slice s; it does not create a new slice.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="CompactFunc">func <a href="http://localhost:8080/src/golang.org/x/exp/slices/slices.go?s=5282:5340#L180">CompactFunc</a>
+				<a class="permalink" href="index.html#CompactFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CompactFunc[S ~[]E, E <a href="../../../../builtin/index.html#any">any</a>](s S, eq func(E, E) <a href="../../../../builtin/index.html#bool">bool</a>) S</pre>
+			<p>
+CompactFunc is like Compact but uses a comparison function.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Compare">func <a href="http://localhost:8080/src/golang.org/x/exp/slices/slices.go?s=2189:2240#L50">Compare</a>
+				<a class="permalink" href="index.html#Compare">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Compare[E <a href="../constraints/index.html">constraints</a>.<a href="../constraints/index.html#Ordered">Ordered</a>](s1, s2 []E) <a href="../../../../builtin/index.html#int">int</a></pre>
+			<p>
+Compare compares the elements of s1 and s2.
+The elements are compared sequentially, starting at index 0,
+until one element is not equal to the other.
+The result of comparing the first non-matching elements is returned.
+If both slices are equal until one of them ends, the shorter slice is
+considered less than the longer one.
+The result is 0 if s1 == s2, -1 if s1 &lt; s2, and +1 if s1 &gt; s2.
+Comparisons involving floating point NaNs are ignored.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="CompareFunc">func <a href="http://localhost:8080/src/golang.org/x/exp/slices/slices.go?s=2853:2925#L77">CompareFunc</a>
+				<a class="permalink" href="index.html#CompareFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func CompareFunc[E1, E2 <a href="../../../../builtin/index.html#any">any</a>](s1 []E1, s2 []E2, cmp func(E1, E2) <a href="../../../../builtin/index.html#int">int</a>) <a href="../../../../builtin/index.html#int">int</a></pre>
+			<p>
+CompareFunc is like Compare but uses a comparison function
+on each pair of elements. The elements are compared in increasing
+index order, and the comparisons stop after the first time cmp
+returns non-zero.
+The result is the first non-zero result of cmp; if cmp always
+returns 0 the result is 0 if len(s1) == len(s2), -1 if len(s1) &lt; len(s2),
+and +1 if len(s1) &gt; len(s2).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Contains">func <a href="http://localhost:8080/src/golang.org/x/exp/slices/slices.go?s=3569:3613#L117">Contains</a>
+				<a class="permalink" href="index.html#Contains">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Contains[E <a href="../../../../builtin/index.html#comparable">comparable</a>](s []E, v E) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+Contains reports whether v is present in s.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Delete">func <a href="http://localhost:8080/src/golang.org/x/exp/slices/slices.go?s=4489:4532#L146">Delete</a>
+				<a class="permalink" href="index.html#Delete">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Delete[S ~[]E, E <a href="../../../../builtin/index.html#any">any</a>](s S, i, j <a href="../../../../builtin/index.html#int">int</a>) S</pre>
+			<p>
+Delete removes the elements s[i:j] from s, returning the modified slice.
+Delete panics if s[i:j] is not a valid slice of s.
+Delete modifies the contents of the slice s; it does not create a new slice.
+Delete is O(len(s)-(j-i)), so if many items must be deleted, it is better to
+make a single call deleting them all together than to delete one at a time.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Equal">func <a href="http://localhost:8080/src/golang.org/x/exp/slices/slices.go?s=1031:1072#L12">Equal</a>
+				<a class="permalink" href="index.html#Equal">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Equal[E <a href="../../../../builtin/index.html#comparable">comparable</a>](s1, s2 []E) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+Equal reports whether two slices are equal: the same length and all
+elements equal. If the lengths are different, Equal returns false.
+Otherwise, the elements are compared in increasing index order, and the
+comparison stops at the first unequal pair.
+Floating point NaNs are not considered equal.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="EqualFunc">func <a href="http://localhost:8080/src/golang.org/x/exp/slices/slices.go?s=1507:1578#L29">EqualFunc</a>
+				<a class="permalink" href="index.html#EqualFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func EqualFunc[E1, E2 <a href="../../../../builtin/index.html#any">any</a>](s1 []E1, s2 []E2, eq func(E1, E2) <a href="../../../../builtin/index.html#bool">bool</a>) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+EqualFunc reports whether two slices are equal using a comparison
+function on each pair of elements. If the lengths are different,
+EqualFunc returns false. Otherwise, the elements are compared in
+increasing index order, and the comparison stops at the first index
+for which eq returns false.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Grow">func <a href="http://localhost:8080/src/golang.org/x/exp/slices/slices.go?s=5842:5880#L201">Grow</a>
+				<a class="permalink" href="index.html#Grow">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Grow[S ~[]E, E <a href="../../../../builtin/index.html#any">any</a>](s S, n <a href="../../../../builtin/index.html#int">int</a>) S</pre>
+			<p>
+Grow increases the slice&#39;s capacity, if necessary, to guarantee space for
+another n elements. After Grow(n), at least n elements can be appended
+to the slice without another allocation. Grow may modify elements of the
+slice between the length and the capacity. If n is negative or too large to
+allocate the memory, Grow panics.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Index">func <a href="http://localhost:8080/src/golang.org/x/exp/slices/slices.go?s=3208:3248#L96">Index</a>
+				<a class="permalink" href="index.html#Index">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Index[E <a href="../../../../builtin/index.html#comparable">comparable</a>](s []E, v E) <a href="../../../../builtin/index.html#int">int</a></pre>
+			<p>
+Index returns the index of the first occurrence of v in s,
+or -1 if not present.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="IndexFunc">func <a href="http://localhost:8080/src/golang.org/x/exp/slices/slices.go?s=3403:3451#L107">IndexFunc</a>
+				<a class="permalink" href="index.html#IndexFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IndexFunc[E <a href="../../../../builtin/index.html#any">any</a>](s []E, f func(E) <a href="../../../../builtin/index.html#bool">bool</a>) <a href="../../../../builtin/index.html#int">int</a></pre>
+			<p>
+IndexFunc returns the first index i satisfying f(s[i]),
+or -1 if none do.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Insert">func <a href="http://localhost:8080/src/golang.org/x/exp/slices/slices.go?s=3851:3899#L126">Insert</a>
+				<a class="permalink" href="index.html#Insert">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Insert[S ~[]E, E <a href="../../../../builtin/index.html#any">any</a>](s S, i <a href="../../../../builtin/index.html#int">int</a>, v ...E) S</pre>
+			<p>
+Insert inserts the values v... into s at index i,
+returning the modified slice.
+In the returned slice r, r[i] == v[0].
+Insert panics if i is out of range.
+This function is O(len(s) + len(v)).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="IsSorted">func <a href="http://localhost:8080/src/golang.org/x/exp/slices/sort.go?s=1326:1374#L30">IsSorted</a>
+				<a class="permalink" href="index.html#IsSorted">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IsSorted[E <a href="../constraints/index.html">constraints</a>.<a href="../constraints/index.html#Ordered">Ordered</a>](x []E) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+IsSorted reports whether x is sorted in ascending order.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="IsSortedFunc">func <a href="http://localhost:8080/src/golang.org/x/exp/slices/sort.go?s=1577:1637#L41">IsSortedFunc</a>
+				<a class="permalink" href="index.html#IsSortedFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func IsSortedFunc[E <a href="../../../../builtin/index.html#any">any</a>](x []E, less func(a, b E) <a href="../../../../builtin/index.html#bool">bool</a>) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+IsSortedFunc reports whether x is sorted in ascending order, with less as the
+comparison function.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Sort">func <a href="http://localhost:8080/src/golang.org/x/exp/slices/sort.go?s=563:602#L8">Sort</a>
+				<a class="permalink" href="index.html#Sort">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Sort[E <a href="../constraints/index.html">constraints</a>.<a href="../constraints/index.html#Ordered">Ordered</a>](x []E)</pre>
+			<p>
+Sort sorts a slice of any ordered type in ascending order.
+Sort may fail to sort correctly when sorting slices of floating-point
+numbers containing Not-a-number (NaN) values.
+Use slices.SortFunc(x, func(a, b float64) bool {return a &lt; b || (math.IsNaN(a) &amp;&amp; !math.IsNaN(b))})
+instead if the input may contain NaNs.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="SortFunc">func <a href="http://localhost:8080/src/golang.org/x/exp/slices/sort.go?s=930:981#L18">SortFunc</a>
+				<a class="permalink" href="index.html#SortFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SortFunc[E <a href="../../../../builtin/index.html#any">any</a>](x []E, less func(a, b E) <a href="../../../../builtin/index.html#bool">bool</a>)</pre>
+			<p>
+SortFunc sorts the slice x in ascending order as determined by the less function.
+This sort is not guaranteed to be stable.
+</p>
+<p>
+SortFunc requires that less is a strict weak ordering.
+See <a href="https://en.wikipedia.org/wiki/Weak_ordering#Strict_weak_orderings">https://en.wikipedia.org/wiki/Weak_ordering#Strict_weak_orderings</a>.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="SortStableFunc">func <a href="http://localhost:8080/src/golang.org/x/exp/slices/sort.go?s=1170:1227#L25">SortStableFunc</a>
+				<a class="permalink" href="index.html#SortStableFunc">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func SortStableFunc[E <a href="../../../../builtin/index.html#any">any</a>](x []E, less func(a, b E) <a href="../../../../builtin/index.html#bool">bool</a>)</pre>
+			<p>
+SortStable sorts the slice x while keeping the original order of equal
+elements, using less to compare elements.
+</p>
+
+			
+			
+
+		
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.18.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="../../../../../LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

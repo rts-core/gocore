@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>spi - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.18.4";</script>
+<script src="../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="../../../../../../index.html">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="../../../../../../index.html">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:8080/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package spi
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "golang.org/x/exp/io/spi"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+				<dd><a href="index.html#pkg-examples" class="examplesLink">Examples</a></dd>
+			
+			
+				<dd><a href="index.html#pkg-subdirectories">Subdirectories</a></dd>
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				<p>
+Package spi allows users to read from and write to an SPI device.
+</p>
+<p>
+# Deprecated
+</p>
+<p>
+This package is not maintained anymore. An actively supported cross-platform
+alternative is <a href="https://periph.io/">https://periph.io/</a>.
+</p>
+
+				<div id="example_" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+		<p>Example illustrates a program that drives an APA-102 LED strip.
+</p>
+		
+		
+			<p>Code:</p>
+			<pre class="code">
+dev, err := spi.Open(&amp;spi.Devfs{
+    Dev:      &#34;/dev/spidev0.1&#34;,
+    Mode:     spi.Mode3,
+    MaxSpeed: 500000,
+})
+if err != nil {
+    panic(err)
+}
+defer dev.Close()
+
+if err := dev.Tx([]byte{
+    0, 0, 0, 0,
+    0xff, 200, 0, 200,
+    0xff, 200, 0, 200,
+    0xe0, 200, 0, 200,
+    0xff, 200, 0, 200,
+    0xff, 8, 50, 0,
+    0xff, 200, 0, 0,
+    0xff, 0, 0, 0,
+    0xff, 200, 0, 200,
+    0xff, 0xff, 0xff, 0xff,
+    0xff, 0xff, 0xff, 0xff,
+    0xff, 0xff, 0xff, 0xff,
+    0xff, 0xff, 0xff, 0xff,
+}, nil); err != nil {
+    panic(err)
+}
+</pre>
+			
+		
+	</div>
+</div>
+
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="index.html#pkg-constants">Constants</a></dd>
+			
+			
+			
+			
+				
+				<dd><a href="index.html#Devfs">type Devfs</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Devfs.Open">func (d *Devfs) Open() (driver.Conn, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Device">type Device</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Open">func Open(o driver.Opener) (*Device, error)</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Device.Close">func (d *Device) Close() error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Device.SetBitOrder">func (d *Device) SetBitOrder(o Order) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Device.SetBitsPerWord">func (d *Device) SetBitsPerWord(bits int) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Device.SetCSChange">func (d *Device) SetCSChange(leaveEnabled bool) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Device.SetDelay">func (d *Device) SetDelay(t time.Duration) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Device.SetMaxSpeed">func (d *Device) SetMaxSpeed(speed int) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Device.SetMode">func (d *Device) SetMode(mode Mode) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Device.Tx">func (d *Device) Tx(w, r []byte) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Mode">type Mode</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Order">type Order</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+		<div id="pkg-examples">
+			<h3>Examples</h3>
+			<div class="js-expandAll expandAll collapsed">(Expand All)</div>
+			<dl>
+			
+			<dd><a class="exampleLink" href="index.html#example_">Package</a></dd>
+			
+			</dl>
+		</div>
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:8080/src/golang.org/x/exp/io/spi/devfs.go">devfs.go</a>
+			
+				<a href="http://localhost:8080/src/golang.org/x/exp/io/spi/spi.go">spi.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				
+				<pre>const (
+    <span id="Mode0">Mode0</span> = <a href="index.html#Mode">Mode</a>(0)
+    <span id="Mode1">Mode1</span> = <a href="index.html#Mode">Mode</a>(1)
+    <span id="Mode2">Mode2</span> = <a href="index.html#Mode">Mode</a>(2)
+    <span id="Mode3">Mode3</span> = <a href="index.html#Mode">Mode</a>(3)
+)</pre>
+			
+				
+				<pre>const (
+    <span id="MSBFirst">MSBFirst</span> = <a href="index.html#Order">Order</a>(0)
+    <span id="LSBFirst">LSBFirst</span> = <a href="index.html#Order">Order</a>(1)
+)</pre>
+			
+		
+		
+		
+		
+			
+			
+			<h2 id="Devfs">type <a href="http://localhost:8080/src/golang.org/x/exp/io/spi/devfs.go?s=929:1494#L41">Devfs</a>
+				<a class="permalink" href="index.html#Devfs">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Devfs is an SPI driver that works against the devfs.
+You need to have loaded the &#34;spidev&#34; Linux module to use this driver.
+</p>
+
+			<pre>type Devfs struct {
+<span id="Devfs.Dev"></span>    <span class="comment">// Dev is the device to be opened.</span>
+    <span class="comment">// Device name is usually in the /dev/spidev&lt;bus&gt;.&lt;chip&gt; format.</span>
+    <span class="comment">// Required.</span>
+    Dev <a href="../../../../../builtin/index.html#string">string</a>
+
+<span id="Devfs.Mode"></span>    <span class="comment">// Mode is the SPI mode. SPI mode is a combination of polarity and phases.</span>
+    <span class="comment">// CPOL is the high order bit, CPHA is the low order. Pre-computed mode</span>
+    <span class="comment">// values are Mode0, Mode1, Mode2 and Mode3. The value of the mode argument</span>
+    <span class="comment">// can be overridden by the device&#39;s driver.</span>
+    <span class="comment">// Required.</span>
+    Mode <a href="index.html#Mode">Mode</a>
+
+<span id="Devfs.MaxSpeed"></span>    <span class="comment">// MaxSpeed is the max clock speed (Hz) and can be overridden by the device&#39;s driver.</span>
+    <span class="comment">// Required.</span>
+    MaxSpeed <a href="../../../../../builtin/index.html#int64">int64</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Devfs.Open">func (*Devfs) <a href="http://localhost:8080/src/golang.org/x/exp/io/spi/devfs.go?s=1586:1629#L61">Open</a>
+					<a class="permalink" href="index.html#Devfs.Open">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (d *<a href="index.html#Devfs">Devfs</a>) Open() (<a href="driver/index.html">driver</a>.<a href="driver/index.html#Conn">Conn</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+Open opens the provided device with the specified options
+and returns a connection.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Device">type <a href="http://localhost:8080/src/golang.org/x/exp/io/spi/spi.go?s=912:952#L30">Device</a>
+				<a class="permalink" href="index.html#Device">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type Device struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="Open">func <a href="http://localhost:8080/src/golang.org/x/exp/io/spi/spi.go?s=2770:2813#L86">Open</a>
+					<a class="permalink" href="index.html#Open">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func Open(o <a href="driver/index.html">driver</a>.<a href="driver/index.html#Opener">Opener</a>) (*<a href="index.html#Device">Device</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				
+				
+				
+			
+
+			
+				
+				<h3 id="Device.Close">func (*Device) <a href="http://localhost:8080/src/golang.org/x/exp/io/spi/spi.go?s=2980:3010#L95">Close</a>
+					<a class="permalink" href="index.html#Device.Close">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (d *<a href="index.html#Device">Device</a>) Close() <a href="../../../../../builtin/index.html#error">error</a></pre>
+				<p>
+Close closes the SPI device and releases the related resources.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Device.SetBitOrder">func (*Device) <a href="http://localhost:8080/src/golang.org/x/exp/io/spi/spi.go?s=1848:1891#L56">SetBitOrder</a>
+					<a class="permalink" href="index.html#Device.SetBitOrder">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (d *<a href="index.html#Device">Device</a>) SetBitOrder(o <a href="index.html#Order">Order</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
+				<p>
+SetBitOrder sets the bit justification used to transfer SPI words.
+Valid values are MSBFirst and LSBFirst.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Device.SetBitsPerWord">func (*Device) <a href="http://localhost:8080/src/golang.org/x/exp/io/spi/spi.go?s=1638:1685#L50">SetBitsPerWord</a>
+					<a class="permalink" href="index.html#Device.SetBitsPerWord">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (d *<a href="index.html#Device">Device</a>) SetBitsPerWord(bits <a href="../../../../../builtin/index.html#int">int</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
+				<p>
+SetBitsPerWord sets how many bits it takes to represent a word, e.g. 8 represents 8-bit words.
+The default is 8 bits per word.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Device.SetCSChange">func (*Device) <a href="http://localhost:8080/src/golang.org/x/exp/io/spi/spi.go?s=2211:2264#L66">SetCSChange</a>
+					<a class="permalink" href="index.html#Device.SetCSChange">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (d *<a href="index.html#Device">Device</a>) SetCSChange(leaveEnabled <a href="../../../../../builtin/index.html#bool">bool</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
+				<p>
+SetCSChange sets whether to leave the chipselect enabled after a Tx.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Device.SetDelay">func (*Device) <a href="http://localhost:8080/src/golang.org/x/exp/io/spi/spi.go?s=2019:2067#L61">SetDelay</a>
+					<a class="permalink" href="index.html#Device.SetDelay">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (d *<a href="index.html#Device">Device</a>) SetDelay(t <a href="../../../../../time/index.html">time</a>.<a href="../../../../../time/index.html#Duration">Duration</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
+				<p>
+SetDelay sets the amount of pause will be added after each frame write.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Device.SetMaxSpeed">func (*Device) <a href="http://localhost:8080/src/golang.org/x/exp/io/spi/spi.go?s=1405:1450#L44">SetMaxSpeed</a>
+					<a class="permalink" href="index.html#Device.SetMaxSpeed">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (d *<a href="index.html#Device">Device</a>) SetMaxSpeed(speed <a href="../../../../../builtin/index.html#int">int</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
+				<p>
+SetMaxSpeed sets the maximum clock speed in Hz.
+The value can be overridden by SPI device&#39;s driver.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Device.SetMode">func (*Device) <a href="http://localhost:8080/src/golang.org/x/exp/io/spi/spi.go?s=1203:1244#L38">SetMode</a>
+					<a class="permalink" href="index.html#Device.SetMode">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (d *<a href="index.html#Device">Device</a>) SetMode(mode <a href="index.html#Mode">Mode</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
+				<p>
+SetMode sets the SPI mode. SPI mode is a combination of polarity and phases.
+CPOL is the high order bit, CPHA is the low order. Pre-computed mode
+values are Mode0, Mode1, Mode2 and Mode3.
+The value can be changed by SPI device&#39;s driver.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Device.Tx">func (*Device) <a href="http://localhost:8080/src/golang.org/x/exp/io/spi/spi.go?s=2513:2551#L77">Tx</a>
+					<a class="permalink" href="index.html#Device.Tx">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (d *<a href="index.html#Device">Device</a>) Tx(w, r []<a href="../../../../../builtin/index.html#byte">byte</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
+				<p>
+Tx performs a duplex transmission to write w to the SPI device
+and read len(r) bytes to r.
+User should not mutate the w and r until this call returns.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Mode">type <a href="http://localhost:8080/src/golang.org/x/exp/io/spi/spi.go?s=603:616#L11">Mode</a>
+				<a class="permalink" href="index.html#Mode">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Mode represents the SPI mode number where clock parity (CPOL)
+is the high order and clock edge (CPHA) is the low order bit.
+</p>
+
+			<pre>type Mode <a href="../../../../../builtin/index.html#int">int</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Order">type <a href="http://localhost:8080/src/golang.org/x/exp/io/spi/spi.go?s=843:857#L23">Order</a>
+				<a class="permalink" href="index.html#Order">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Order is the bit justification to be used while transferring
+words to the SPI device. MSB-first encoding is more popular
+than LSB-first.
+</p>
+
+			<pre>type Order <a href="../../../../../builtin/index.html#int">int</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+	
+	
+		<h2 id="pkg-subdirectories">Subdirectories</h2>
+	
+	<div class="pkg-dir">
+		<table>
+			<tr>
+				<th class="pkg-name">Name</th>
+				<th class="pkg-synopsis">Synopsis</th>
+			</tr>
+
+			
+			<tr>
+				<td colspan="2"><a href="../index.html">..</a></td>
+			</tr>
+			
+
+			
+				<tr>
+				
+					<td class="pkg-name" style="padding-left: 0px;">
+						<a href="driver/index.html">driver</a>
+					</td>
+				
+					<td class="pkg-synopsis">
+						Package driver contains interfaces to be implemented by various SPI implementations.
+					</td>
+				</tr>
+			
+		</table>
+	</div>
+
+
+
+<div id="footer">
+Build version go1.18.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="../../../../../../LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

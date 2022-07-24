@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>i2c - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.18.4";</script>
+<script src="../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="../../../../../../index.html">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="../../../../../../index.html">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:8080/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package i2c
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "golang.org/x/exp/io/i2c"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+				<dd><a href="index.html#pkg-examples" class="examplesLink">Examples</a></dd>
+			
+			
+				<dd><a href="index.html#pkg-subdirectories">Subdirectories</a></dd>
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				<p>
+Package i2c allows users to read from and write to a slave I2C device.
+</p>
+<p>
+# Deprecated
+</p>
+<p>
+This package is not maintained anymore. An actively supported cross-platform
+alternative is <a href="https://periph.io/">https://periph.io/</a>.
+</p>
+
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+				
+				<dd><a href="index.html#TenBit">func TenBit(addr int) int</a></dd>
+			
+			
+				
+				<dd><a href="index.html#Devfs">type Devfs</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Devfs.Open">func (d *Devfs) Open(addr int, tenbit bool) (driver.Conn, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Device">type Device</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Open">func Open(o driver.Opener, addr int) (*Device, error)</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Device.Close">func (d *Device) Close() error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Device.Read">func (d *Device) Read(buf []byte) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Device.ReadReg">func (d *Device) ReadReg(reg byte, buf []byte) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Device.Write">func (d *Device) Write(buf []byte) (err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Device.WriteReg">func (d *Device) WriteReg(reg byte, buf []byte) (err error)</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+		<div id="pkg-examples">
+			<h3>Examples</h3>
+			<div class="js-expandAll expandAll collapsed">(Expand All)</div>
+			<dl>
+			
+			<dd><a class="exampleLink" href="index.html#example_Open">Open</a></dd>
+			
+			</dl>
+		</div>
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:8080/src/golang.org/x/exp/io/i2c/devfs.go">devfs.go</a>
+			
+				<a href="http://localhost:8080/src/golang.org/x/exp/io/i2c/i2c.go">i2c.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+			
+			
+			<h2 id="TenBit">func <a href="http://localhost:8080/src/golang.org/x/exp/io/i2c/i2c.go?s=685:710#L16">TenBit</a>
+				<a class="permalink" href="index.html#TenBit">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TenBit(addr <a href="../../../../../builtin/index.html#int">int</a>) <a href="../../../../../builtin/index.html#int">int</a></pre>
+			<p>
+TenBit marks an I2C address as a 10-bit address.
+</p>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="Devfs">type <a href="http://localhost:8080/src/golang.org/x/exp/io/i2c/devfs.go?s=408:499#L11">Devfs</a>
+				<a class="permalink" href="index.html#Devfs">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Devfs is an I2C driver that works against the devfs.
+You need to load the &#34;i2c-dev&#34; kernel module to use this driver.
+</p>
+
+			<pre>type Devfs struct {
+<span id="Devfs.Dev"></span>    <span class="comment">// Dev is the I2C bus device, e.g. /dev/i2c-1. Required.</span>
+    Dev <a href="../../../../../builtin/index.html#string">string</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Devfs.Open">func (*Devfs) <a href="http://localhost:8080/src/golang.org/x/exp/io/i2c/devfs.go?s=695:759#L23">Open</a>
+					<a class="permalink" href="index.html#Devfs.Open">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (d *<a href="index.html#Devfs">Devfs</a>) Open(addr <a href="../../../../../builtin/index.html#int">int</a>, tenbit <a href="../../../../../builtin/index.html#bool">bool</a>) (<a href="driver/index.html">driver</a>.<a href="driver/index.html#Conn">Conn</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Device">type <a href="http://localhost:8080/src/golang.org/x/exp/io/i2c/i2c.go?s=591:631#L11">Device</a>
+				<a class="permalink" href="index.html#Device">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Device represents an I2C device. Devices must be closed once
+they are no longer in use.
+</p>
+
+			<pre>type Device struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="Open">func <a href="http://localhost:8080/src/golang.org/x/exp/io/i2c/i2c.go?s=1814:1867#L52">Open</a>
+					<a class="permalink" href="index.html#Open">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func Open(o <a href="driver/index.html">driver</a>.<a href="driver/index.html#Opener">Opener</a>, addr <a href="../../../../../builtin/index.html#int">int</a>) (*<a href="index.html#Device">Device</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+Open opens a connection to an I2C device.
+All devices must be closed once they are no longer in use.
+For devices that use 10-bit I2C addresses, addr can be marked
+as a 10-bit address with TenBit.
+</p>
+
+				<div id="example_Open" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+		
+		
+		
+			<p>Code:</p>
+			<pre class="code">
+d, err := i2c.Open(&amp;i2c.Devfs{Dev: &#34;/dev/i2c-1&#34;}, 0x39)
+if err != nil {
+    panic(err)
+}
+
+<span class="comment">// opens a 10-bit address</span>
+d, err = i2c.Open(&amp;i2c.Devfs{Dev: &#34;/dev/i2c-1&#34;}, i2c.TenBit(0x78))
+if err != nil {
+    panic(err)
+}
+
+_ = d
+</pre>
+			
+		
+	</div>
+</div>
+
+				
+			
+
+			
+				
+				<h3 id="Device.Close">func (*Device) <a href="http://localhost:8080/src/golang.org/x/exp/io/i2c/i2c.go?s=1547:1577#L44">Close</a>
+					<a class="permalink" href="index.html#Device.Close">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (d *<a href="index.html#Device">Device</a>) Close() <a href="../../../../../builtin/index.html#error">error</a></pre>
+				<p>
+Close closes the device and releases the underlying sources.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Device.Read">func (*Device) <a href="http://localhost:8080/src/golang.org/x/exp/io/i2c/i2c.go?s=788:827#L21">Read</a>
+					<a class="permalink" href="index.html#Device.Read">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (d *<a href="index.html#Device">Device</a>) Read(buf []<a href="../../../../../builtin/index.html#byte">byte</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
+				<p>
+Read reads len(buf) bytes from the device.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Device.ReadReg">func (*Device) <a href="http://localhost:8080/src/golang.org/x/exp/io/i2c/i2c.go?s=921:973#L26">ReadReg</a>
+					<a class="permalink" href="index.html#Device.ReadReg">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (d *<a href="index.html#Device">Device</a>) ReadReg(reg <a href="../../../../../builtin/index.html#byte">byte</a>, buf []<a href="../../../../../builtin/index.html#byte">byte</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
+				<p>
+ReadReg is similar to Read but it reads from a register.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Device.Write">func (*Device) <a href="http://localhost:8080/src/golang.org/x/exp/io/i2c/i2c.go?s=1183:1229#L33">Write</a>
+					<a class="permalink" href="index.html#Device.Write">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (d *<a href="index.html#Device">Device</a>) Write(buf []<a href="../../../../../builtin/index.html#byte">byte</a>) (err <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+Write writes the buffer to the device. If it is required to write to a
+specific register, the register should be passed as the first byte in the
+given buffer.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Device.WriteReg">func (*Device) <a href="http://localhost:8080/src/golang.org/x/exp/io/i2c/i2c.go?s=1321:1380#L38">WriteReg</a>
+					<a class="permalink" href="index.html#Device.WriteReg">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (d *<a href="index.html#Device">Device</a>) WriteReg(reg <a href="../../../../../builtin/index.html#byte">byte</a>, buf []<a href="../../../../../builtin/index.html#byte">byte</a>) (err <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+WriteReg is similar to Write but writes to a register.
+</p>
+
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+	
+	
+		<h2 id="pkg-subdirectories">Subdirectories</h2>
+	
+	<div class="pkg-dir">
+		<table>
+			<tr>
+				<th class="pkg-name">Name</th>
+				<th class="pkg-synopsis">Synopsis</th>
+			</tr>
+
+			
+			<tr>
+				<td colspan="2"><a href="../index.html">..</a></td>
+			</tr>
+			
+
+			
+				<tr>
+				
+					<td class="pkg-name" style="padding-left: 0px;">
+						<a href="driver/index.html">driver</a>
+					</td>
+				
+					<td class="pkg-synopsis">
+						Package driver contains interfaces to be implemented by various I2C implementations.
+					</td>
+				</tr>
+			
+				<tr>
+				
+					<td class="pkg-name" style="padding-left: 0px;">
+						<a href="example/index.html">example</a>
+					</td>
+				
+					<td class="pkg-synopsis">
+						
+					</td>
+				</tr>
+			
+				<tr>
+				
+					<td class="pkg-name" style="padding-left: 20px;">
+						<a href="example/displayip/index.html">displayip</a>
+					</td>
+				
+					<td class="pkg-synopsis">
+						Package main contains a program that displays the IPv4 address of the machine on an a Grove-LCD RGB backlight.
+					</td>
+				</tr>
+			
+		</table>
+	</div>
+
+
+
+<div id="footer">
+Build version go1.18.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="../../../../../../LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

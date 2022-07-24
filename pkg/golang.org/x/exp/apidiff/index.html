@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>apidiff - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.18.4";</script>
+<script src="../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="../../../../../index.html">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="../../../../../index.html">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:8080/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package apidiff
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "golang.org/x/exp/apidiff"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+			
+				
+				<dd><a href="index.html#Change">type Change</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Report">type Report</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Changes">func Changes(old, new *types.Package) Report</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Report.String">func (r Report) String() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Report.Text">func (r Report) Text(w io.Writer) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Report.TextCompatible">func (r Report) TextCompatible(w io.Writer) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Report.TextIncompatible">func (r Report) TextIncompatible(w io.Writer, withHeader bool) error</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:8080/src/golang.org/x/exp/apidiff/apidiff.go">apidiff.go</a>
+			
+				<a href="http://localhost:8080/src/golang.org/x/exp/apidiff/compatibility.go">compatibility.go</a>
+			
+				<a href="http://localhost:8080/src/golang.org/x/exp/apidiff/correspondence.go">correspondence.go</a>
+			
+				<a href="http://localhost:8080/src/golang.org/x/exp/apidiff/messageset.go">messageset.go</a>
+			
+				<a href="http://localhost:8080/src/golang.org/x/exp/apidiff/report.go">report.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+		
+			
+			
+			<h2 id="Change">type <a href="http://localhost:8080/src/golang.org/x/exp/apidiff/report.go?s=189:247#L5">Change</a>
+				<a class="permalink" href="index.html#Change">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+A Change describes a single API change.
+</p>
+
+			<pre>type Change struct {
+<span id="Change.Message"></span>    Message    <a href="../../../../builtin/index.html#string">string</a>
+<span id="Change.Compatible"></span>    Compatible <a href="../../../../builtin/index.html#bool">bool</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Report">type <a href="http://localhost:8080/src/golang.org/x/exp/apidiff/report.go?s=104:144#L1">Report</a>
+				<a class="permalink" href="index.html#Report">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Report describes the changes detected by Changes.
+</p>
+
+			<pre>type Report struct {
+<span id="Report.Changes"></span>    Changes []<a href="index.html#Change">Change</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="Changes">func <a href="http://localhost:8080/src/golang.org/x/exp/apidiff/apidiff.go?s=1101:1145#L14">Changes</a>
+					<a class="permalink" href="index.html#Changes">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func Changes(old, new *<a href="../../../../go/types/index.html">types</a>.<a href="../../../../go/types/index.html#Package">Package</a>) <a href="index.html#Report">Report</a></pre>
+				<p>
+Changes reports on the differences between the APIs of the old and new packages.
+It classifies each difference as either compatible or incompatible (breaking.) For
+a detailed discussion of what constitutes an incompatible change, see the package
+documentation.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="Report.String">func (Report) <a href="http://localhost:8080/src/golang.org/x/exp/apidiff/report.go?s=443:474#L20">String</a>
+					<a class="permalink" href="index.html#Report.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (r <a href="index.html#Report">Report</a>) String() <a href="../../../../builtin/index.html#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Report.Text">func (Report) <a href="http://localhost:8080/src/golang.org/x/exp/apidiff/report.go?s=598:637#L28">Text</a>
+					<a class="permalink" href="index.html#Report.Text">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (r <a href="index.html#Report">Report</a>) Text(w <a href="../../../../io/index.html">io</a>.<a href="../../../../io/index.html#Writer">Writer</a>) <a href="../../../../builtin/index.html#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Report.TextCompatible">func (Report) <a href="http://localhost:8080/src/golang.org/x/exp/apidiff/report.go?s=956:1005#L42">TextCompatible</a>
+					<a class="permalink" href="index.html#Report.TextCompatible">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (r <a href="index.html#Report">Report</a>) TextCompatible(w <a href="../../../../io/index.html">io</a>.<a href="../../../../io/index.html#Writer">Writer</a>) <a href="../../../../builtin/index.html#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Report.TextIncompatible">func (Report) <a href="http://localhost:8080/src/golang.org/x/exp/apidiff/report.go?s=740:808#L35">TextIncompatible</a>
+					<a class="permalink" href="index.html#Report.TextIncompatible">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (r <a href="index.html#Report">Report</a>) TextIncompatible(w <a href="../../../../io/index.html">io</a>.<a href="../../../../io/index.html#Writer">Writer</a>, withHeader <a href="../../../../builtin/index.html#bool">bool</a>) <a href="../../../../builtin/index.html#error">error</a></pre>
+				
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.18.4.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="../../../../../LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>
