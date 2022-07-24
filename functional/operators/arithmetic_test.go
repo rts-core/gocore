@@ -93,3 +93,39 @@ func Test_Xor_CalledWithGiven_ReturnsExpected(t *testing.T) {
 		a.Equal(c.expected, operators.Xor(c.x, c.y))
 	}
 }
+
+var maxCases = []struct {
+	x, y, expected int
+}{
+	{0, 0, 0},
+	{1, 3, 3},
+	{-3, 1, 1},
+	{-3, -1, -1},
+	{3, -1, 3},
+	{3, 0, 3},
+}
+
+func Test_Max_CalledWithGiven_ReturnsExpected(t *testing.T) {
+	a := assert.New(t)
+	for _, c := range maxCases {
+		a.Equal(c.expected, operators.Max(c.x, c.y))
+	}
+}
+
+var minCases = []struct {
+	x, y, expected int
+}{
+	{0, 0, 0},
+	{1, 3, 1},
+	{-3, 1, -3},
+	{-3, -1, -3},
+	{3, -1, -1},
+	{3, 0, 0},
+}
+
+func Test_Min_CalledWithGiven_ReturnsExpected(t *testing.T) {
+	a := assert.New(t)
+	for _, c := range minCases {
+		a.Equal(c.expected, operators.Min(c.x, c.y))
+	}
+}
